@@ -8,12 +8,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
+  welcomeMessage = "Welcome to the Login Page"
+  //Variable is used to interpolate the name into the view when the welsome page loads
+  name = ''
+
   // Inject ActivatedRouter Dependency for Route parameter
   constructor(private route:ActivatedRoute) {
    }
 
   ngOnInit() {
-    console.log(this.route.snapshot.params['name']);
+    this.name = this.route.snapshot.params['name']
+    console.log(this.name);
   }
-
 }
