@@ -1,7 +1,11 @@
 # Todo
+ng lint
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+ng build -- generates dist folder that be placed directly on a web server for frondend relate stuff
 
+ng test -- in Front end workd tests are called specs Jasmine tests run on Karma
+
+ng e2e -- entire application test
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
