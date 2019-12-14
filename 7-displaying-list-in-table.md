@@ -10,9 +10,11 @@ component typescript
     {id: 3, description : 'activity 3'},
     {id: 4, description : 'activity 4'},
     {id: 5, description : 'activity 5'}
-
   ]
 ```
+
+Display cases in the list form
+
 ```html
 <tbody>
     <tr *ngFor="let todo of todos">

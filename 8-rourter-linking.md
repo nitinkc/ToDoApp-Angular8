@@ -1,6 +1,7 @@
+# routerLink Directive for page hyperlinking
 
-Welcome {{name}} !!!
-
+```html
 <div>
     Access your TODO list <a routerLink="/todos">here</a>
 </div>
+```
