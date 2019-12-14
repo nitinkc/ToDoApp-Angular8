@@ -1,4 +1,4 @@
-# (Event Binding)
+# [(Banana in the Box)] Two way Data binding
 
 Between Class (ts) and Template
 
