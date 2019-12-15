@@ -23,3 +23,24 @@ Display cases in the list form
     </tr>
   </tbody>
 ```
+
+
+## Displaying the date using the format method with Pipe
+
+```ts      
+<td>{{todo.targetDate | date |uppercase}}</td>
+```
+
+
+### Declaring a class for ToDo
+
+```ts
+export class Todo{
+  constructor(
+    public id: number,
+    public description: string,
+    public done: boolean,
+    public targetDate: Date
+  ){}
+}
+```
