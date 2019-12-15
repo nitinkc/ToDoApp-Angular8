@@ -58,3 +58,18 @@ welcome component html
   </div>
 ```
 
+## Error Handling
+
+Add the error call back in the welcome component and handle the error rersponse accordingly
+
+```ts
+ getWelcomeFromServer(){
+    this.welcomeService.executeHelloWorldService().subscribe(
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
+    );
+
+ handleErrorResponse(error){
+    this.welcomeMessageFromServer = error.error.message;
+  }
+```

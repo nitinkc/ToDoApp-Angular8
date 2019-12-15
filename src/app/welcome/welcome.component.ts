@@ -27,7 +27,8 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeFromServer(){
     this.welcomeService.executeHelloWorldService().subscribe(
-      response => this.handleSuccessfulResponse(response)
+      response => this.handleSuccessfulResponse(response),
+      error => this.handleErrorResponse(error)
     );
 
     console.log("The execution continues... asynchronously")
@@ -36,6 +37,10 @@ export class WelcomeComponent implements OnInit {
   handleSuccessfulResponse(response){
     this.welcomeMessageFromServer = response.message;
     //console.log(response.message)
+  }
+
+  handleErrorResponse(error){
+    this.welcomeMessageFromServer = error.error.message;
   }
 
 }
