@@ -5,3 +5,5 @@
     Access your TODO list <a routerLink="/todos">here</a>
 </div>
 ```
+
+use of Href wil have the page refreshed each time, this its a good practise to use routerLink
