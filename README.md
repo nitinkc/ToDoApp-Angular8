@@ -1,4 +1,11 @@
 # Todo
+
+After Cloning the project
+
+Run npm install to have other dependencies get pulled from the internet
+
+then run ng build 
+
 ng lint
 
 ng build -- generates dist folder that be placed directly on a web server for frondend relate stuff
