@@ -1,6 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome {{name}} !!!</title>
+</head>
+<body>
 
-Welcome {{name}} !!!
-
-<div>
-    Access your TODO list <a routerLink="/todos">here</a>
+<div class="container-fluid">
+  <p>You are logged in</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3 col-md-6 bg-danger">
+            <h2>
+                Access your TODO list <a routerLink="/todos">here</a>
+            </h2>
+      </div>
+      <div class="col-sm-9 col-md-6 bg-warning">
+          <p> Get Hello Message from the Server </p>
+          <button class="btn btn-primary" (click)="getWelcomeFromServer()">Get Welcome From Server</button>
+          <p *ngIf="welcomeMessageFromServer" class="text-danger">
+            <b> {{welcomeMessageFromServer}} </b>
+          </p>
+      </div>
+    </div>
+  </div>
 </div>
+</body>
+</html>

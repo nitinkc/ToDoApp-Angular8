@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { WelcomeDataService } from '../service/data/welcome-data.service';
 
 @Component({
   selector: 'app-welcome',
@@ -8,16 +9,33 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class WelcomeComponent implements OnInit {
 
-  welcomeMessage = "Welcome to the Login Page"
+  welcomeMessage = "Welcome to the Login Page";
+  welcomeMessageFromServer: String;
   //Variable is used to interpolate the name into the view when the welsome page loads
   name = ''
 
   // Inject ActivatedRouter Dependency for Route parameter
-  constructor(private route:ActivatedRoute) {
+  constructor(
+    private route:ActivatedRoute,
+    private welcomeService:WelcomeDataService
+    ) {
    }
 
   ngOnInit() {
     this.name = this.route.snapshot.params['name']
-    console.log(this.name);
   }
+
+  getWelcomeFromServer(){
+    this.welcomeService.executeHelloWorldService().subscribe(
+      response => this.handleSuccessfulResponse(response)
+    );
+
+    console.log("The execution continues... asynchronously")
+  }
+
+  handleSuccessfulResponse(response){
+    this.welcomeMessageFromServer = response.message;
+    //console.log(response.message)
+  }
+
 }
