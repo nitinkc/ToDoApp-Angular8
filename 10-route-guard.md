@@ -18,7 +18,7 @@ export class RouteGuardService implements CanActivate {
 
     canActivate(route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): boolean {
-      if(this.authenticator.isUserLoggedIn){
+      if(this.authenticator.isUserLoggedIn()){
         return true;
       }
 
