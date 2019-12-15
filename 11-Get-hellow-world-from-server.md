@@ -73,3 +73,38 @@ Add the error call back in the welcome component and handle the error rersponse 
     this.welcomeMessageFromServer = error.error.message;
   }
 ```
+
+### Path Parameter
+
+In the data Service
+
+use back tick for the URL
+```ts
+executeHelloWorldServicePathParam(name){
+    console.log("from executeHelloWorldServicePathParam" );
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world/${name}`)
+  }
+
+```
+
+In the welcome component
+
+```ts
+getWelcomeFromServerWithParam(){
+    this.welcomeService.executeHelloWorldServicePathParam(this.name).subscribe(
+      response => this.handleSuccessfulResponseWithParam(response),
+      error => this.handleErrorResponsewithParam(error)
+    );
+
+    console.log("The execution continues... asynchronously")
+  }
+
+  handleSuccessfulResponseWithParam(response){
+    this.welcomeMessageFromServerWithParam = response.message;
+  }
+  handleErrorResponsewithParam(error){
+    this.welcomeMessageFromServerWithParam = error.error.message;
+  }
+```
+
+
