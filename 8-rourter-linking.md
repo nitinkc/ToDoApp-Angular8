@@ -6,4 +6,4 @@
 </div>
 ```
 
-use of Href wil have the page refreshed each time, this its a good practise to use routerLink
+use of Href will have the page refreshed each time, this its a good practise to use routerLink
