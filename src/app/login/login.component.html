@@ -2,11 +2,19 @@
     <small *ngIf='invalidLogin'>{{errorMessage}}</small>
 </div>
 
-<div>
-    <label> User Name : </label> <input type="text" name="username" [(ngModel)]="username">
-    <label> Password : </label> <input type="text" name="password" value="{{password}}">
+<div class="container">
+        <h2>Enter Credentials</h2>
+        <form class="form-inline" action="/action_page.php">
+          <label for="email2" class="mb-2 mr-sm-2">User Name :</label>
+          <input type="text" class="form-control mb-2 mr-sm-2" id="email2" placeholder="Enter user name" name="username" [(ngModel)]="username">
+          <label for="pwd2" class="mb-2 mr-sm-2">Password:</label>
+          <input type="text" name="password" class="form-control mb-2 mr-sm-2" id="pwd2" placeholder="Enter password" value="{{password}}">
+          <div class="form-check mb-2 mr-sm-2">
+            <label class="form-check-label">
+              <input type="checkbox" class="form-check-input" name="remember"> Remember me
+            </label>
+          </div>    
+          <button  (click) = handleLogin() type="submit" class="btn btn-primary mb-2">Login</button>
+        </form>
 </div>
-
-<div>
-    <button (click) = handleLogin()>Login</button>
-</div>
+      
