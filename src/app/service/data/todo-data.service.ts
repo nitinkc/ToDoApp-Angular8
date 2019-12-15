@@ -10,9 +10,14 @@ export class TodoDataService {
 
   constructor(
     private http:HttpClient
-  ) { }
+  ) {}
 
   retrieveAllTodos(username){
-    return this.http.get<Todo[]>(`http://localhost:8080/users/${username}/todos`)
+    return this.http.get<Todo[]>(`http://localhost:8080/users/${username}/todos`);
+  }
+
+  deleteATodo(username,id){
+    console.log('nitin ::::::::::: ' + `${id}` + `${username}`);
+    return this.http.delete(`http://localhost:8080/users/${username}/todos/${id}`);
   }
 }
