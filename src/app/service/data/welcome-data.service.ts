@@ -14,6 +14,11 @@ export class WelcomeDataService {
 
   executeHelloWorldService(){
     console.log("from executeHelloWorldService" );
-    return this.http.get<HelloWorldBean>("http://localhost:8080/hello-world/nitin")
+    return this.http.get<HelloWorldBean>("http://localhost:8080/hello-world")
+  }
+
+  executeHelloWorldServicePathParam(name){
+    console.log("from executeHelloWorldServicePathParam" );
+    return this.http.get<HelloWorldBean>(`http://localhost:8080/hello-world/${name}`)
   }
 }

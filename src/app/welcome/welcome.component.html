@@ -9,7 +9,7 @@
   <p>You are logged in</p>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-sm-3 col-md-6 bg-danger">
+      <div class="col-md-6 bg-danger">
             <h2>
                 Access your TODO list <a routerLink="/todos">here</a>
             </h2>
@@ -23,6 +23,21 @@
       </div>
     </div>
   </div>
+
+  <!-- Setting two column widths -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-4 col-sm-4">
+            <p> Get Hello Message from the Server with Parameter </p>
+          <button class="btn btn-primary" (click)="getWelcomeFromServerWithParam()">Welcome From Server + Param</button>
+          <p *ngIf="name" class="text-danger">
+            <b> {{welcomeMessageFromServerWithParam}} </b>
+          </p>
+        </div>
+        <div class="col-4 col-sm-4 bg-success">2 of 4</div>
+        <div class="col-4 col-sm-4">3 of 4</div>
+    </div>
+</div>
 </div>
 </body>
 </html>

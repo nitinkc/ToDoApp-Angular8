@@ -11,6 +11,8 @@ export class WelcomeComponent implements OnInit {
 
   welcomeMessage = "Welcome to the Login Page";
   welcomeMessageFromServer: String;
+  welcomeMessageFromServerWithParam: String;
+
   //Variable is used to interpolate the name into the view when the welsome page loads
   name = ''
 
@@ -41,6 +43,23 @@ export class WelcomeComponent implements OnInit {
 
   handleErrorResponse(error){
     this.welcomeMessageFromServer = error.error.message;
+  }
+
+
+  getWelcomeFromServerWithParam(){
+    this.welcomeService.executeHelloWorldServicePathParam(this.name).subscribe(
+      response => this.handleSuccessfulResponseWithParam(response),
+      error => this.handleErrorResponsewithParam(error)
+    );
+
+    console.log("The execution continues... asynchronously")
+  }
+
+  handleSuccessfulResponseWithParam(response){
+    this.welcomeMessageFromServerWithParam = response.message;
+  }
+  handleErrorResponsewithParam(error){
+    this.welcomeMessageFromServerWithParam = error.error.message;
   }
 
 }
