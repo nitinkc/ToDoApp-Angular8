@@ -1,4 +1,4 @@
-/*-# Delete a specific todo from a user
+# Delete a specific todo from a user
 
 in the view (list todo) add a button to delete
 
