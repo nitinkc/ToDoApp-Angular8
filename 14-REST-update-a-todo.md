@@ -1,6 +1,5 @@
 # Update Rest Call for a Todo Item
 
-
 # Bringing the data from the list todo view to the update view 
 Create a todo component (another screen for creating or modifying a todo item);
 
@@ -100,6 +99,10 @@ updateTodo(username,id, todo){
   }
 ```
 
+# Navigate to the list page
 
+```ts
+this.router.navigate(['todos'])
+```
 
 
