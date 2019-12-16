@@ -22,23 +22,37 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     //Initialize this to be the place holder, else the delay in an asynchronous call would give null pointer error
-    this.todo = new Todo(1,'',new Date(),true);
+    this.todo = new Todo(this.id,'','',true);
 
-    this.toDoService.retrieveTodo('username',this.id)
-    .subscribe(
-      data => {this.todo = <Todo> data
-      console.log(this.todo.targetDate)
-      }
-    )
+    if(this.id != -1){
+      this.toDoService.retrieveTodo('username',this.id)
+      .subscribe(
+        data => {this.todo = <Todo> data
+        console.log(this.todo.targetDate)
+        }
+      )
+    }
+    
   }
 
   saveToDo(){
-    this.toDoService.updateTodo('username',this.id,this.todo)
+    if(this.id === -1){
+      //Create a new Entrt. CALL POST METHOD
+      this.toDoService.createTodo('username',this.todo)
       .subscribe(
         data => {
           console.log(data)
           this.router.navigate(['todos'])
         }
       )
+    }else{
+      this.toDoService.updateTodo('username',this.id,this.todo)
+      .subscribe(
+        data => {
+          console.log(data)
+          this.router.navigate(['todos'])
+        }
+      )
+    }
   }
 }

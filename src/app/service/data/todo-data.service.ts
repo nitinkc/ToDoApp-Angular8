@@ -29,4 +29,10 @@ export class TodoDataService {
       `http://localhost:8080/users/${username}/todo/${id}`,
       todo);
   }
+
+  createTodo(username, todo){
+    return this.http.post(
+      `http://localhost:8080/users/${username}/todos`,
+      todo);
+  }
 }
