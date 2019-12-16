@@ -1,12 +1,13 @@
 <div class="container">
   <h2>Update Todo </h2>
 
-  <form action="" class="was-validated">
+  <form (ngSubmit)="!todoForm.invalid && saveToDo()" #todoForm="ngForm" class="was-validated">
     <div class="form-group">
       <label for="uname">Username:</label>
-      <input type="text" [(ngModel)]="todo.description" class="form-control" id="uname" placeholder="Description" name="description" required>
+      <input type="text" [(ngModel)]="todo.description" minlength="5"
+          class="form-control" id="uname" placeholder="Description" name="description" required>
       <div class="valid-feedback">Valid.</div>
-      <div class="invalid-feedback">Please fill out this field.</div>
+      <div class="invalid-feedback">Please fill out the description. Minimum 5 characters</div>
     </div>
     <div class="form-group">
       <label for="pwd">Target Date:</label>
@@ -17,6 +18,6 @@
       <div class="valid-feedback">Valid.</div>
       <div class="invalid-feedback">Please fill out this field.</div>
     </div>
-    <button type="submit" (click)="saveToDo()" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary">Save</button>
   </form>
 </div>
