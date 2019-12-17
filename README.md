@@ -6,6 +6,11 @@ Run npm install to have other dependencies get pulled from the internet
 
 then run ng build 
 
+# Prod build
+ng build --configuration=production
+
+
+
 ng lint
 
 ng build -- generates dist folder that be placed directly on a web server for frondend relate stuff

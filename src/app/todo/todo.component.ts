@@ -22,7 +22,7 @@ export class TodoComponent implements OnInit {
   ngOnInit() {
     this.id = this.route.snapshot.params['id'];
     //Initialize this to be the place holder, else the delay in an asynchronous call would give null pointer error
-    this.todo = new Todo(this.id,'','',true);
+    this.todo = new Todo(this.id,'',new Date(),true);
 
     if(this.id != -1){
       this.toDoService.retrieveTodo('username',this.id)
