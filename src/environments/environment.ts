@@ -7,7 +7,6 @@ export const environment = {
   // apiUrl: 'http://localhost:5000'
   //For H2-DB
   apiUrl: 'http://todorestapi-env.rpzpu9tqns.us-east-1.elasticbeanstalk.com'
-  
   //My SQL integrated Beanstalk managed
   //apiUrl: 'http://todorestapi-env-qa-mysql.rpzpu9tqns.us-east-1.elasticbeanstalk.com/'
 };
