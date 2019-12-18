@@ -7,6 +7,9 @@ Run npm install to have other dependencies get pulled from the internet
 then run ng build 
 
 # Prod build
+npm run build
+
+Enhance for future via 
 ng build --configuration=production
 
 
