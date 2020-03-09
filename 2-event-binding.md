@@ -1,4 +1,3 @@
-![](0.pdf)
 # (Event Binding)
 
 Between Class (ts) and Template
